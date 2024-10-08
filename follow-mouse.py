@@ -20,6 +20,16 @@ def draw_circle(x, y):
         glVertex2f(x + dx, y + dy)  # Calculate vertex position
     glEnd()
 
+
+def draw_square(x, y):
+    """Draw a square at the specified (x, y) position."""
+    glBegin(GL_QUADS)
+    glVertex2f(x - circle_radius, y - circle_radius)  # Bottom left
+    glVertex2f(x + circle_radius, y - circle_radius)  # Bottom right
+    glVertex2f(x + circle_radius, y + circle_radius)  # Top right
+    glVertex2f(x - circle_radius, y + circle_radius)  # Top left
+    glEnd()
+
 def main():
     # Initialize Pygame
     pygame.init()
@@ -57,7 +67,7 @@ def main():
         glClear(GL_COLOR_BUFFER_BIT)
 
         # Draw the circle at the current position
-        draw_circle(circle_position[0], circle_position[1])
+        draw_square(circle_position[0], circle_position[1])
 
         # Swap the buffer to display
         pygame.display.flip()
