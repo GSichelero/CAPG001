@@ -63,7 +63,6 @@ def init():
     
 
 def create_rotation_matrix(angle, axis):
-    """Creates a rotation matrix for a given angle (in degrees) and axis."""
     angle = np.radians(angle)
     c, s = np.cos(angle), np.sin(angle)
     if axis == 'x':
